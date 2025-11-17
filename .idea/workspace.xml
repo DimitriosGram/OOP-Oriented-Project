@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a85748f-64b3-4fdb-9cfb-d19ada37fc5c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/ParsedLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/ParsedLogEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/LogEntryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/LogFileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/ParsedLogEntryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/ParsedLogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/OOP-Oriented-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OOP-Oriented-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP-AI-Project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/ParsedLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/ParsedLog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

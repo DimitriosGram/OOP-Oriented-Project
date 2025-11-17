@@ -17,7 +17,7 @@ public class ParsedLog {
 
     @ManyToOne
     @JoinColumn(name = "log_file_id", nullable = false)
-    private LogFile logfile;
+    private LogFile logFile;
 
     @Column(name = "source_type", nullable = false, length = 20)
     private String sourceType;
@@ -37,12 +37,12 @@ public class ParsedLog {
         this.id = id;
     }
 
-    public LogFile getLogfile() {
-        return logfile;
+    public LogFile getLogFile() {
+        return logFile;
     }
 
-    public void setLogfile(LogFile logfile) {
-        this.logfile = logfile;
+    public void setLogFile(LogFile logFile) {
+        this.logFile = logFile;
     }
 
     public String getSourceType() {
@@ -74,7 +74,7 @@ public class ParsedLog {
         if (o == null || getClass() != o.getClass()) return false;
         ParsedLog parsedLog = (ParsedLog) o;
         return Objects.equals(id, parsedLog.id)
-                && Objects.equals(logfile, parsedLog.logfile)
+                && Objects.equals(logFile, parsedLog.logFile)
                 && Objects.equals(sourceType, parsedLog.sourceType)
                 && Objects.equals(totalEntries, parsedLog.totalEntries)
                 && Objects.equals(parsedEntries, parsedLog.parsedEntries);
@@ -82,6 +82,6 @@ public class ParsedLog {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, logfile, sourceType, totalEntries, parsedEntries);
+        return Objects.hash(id, logFile, sourceType, totalEntries, parsedEntries);
     }
 }

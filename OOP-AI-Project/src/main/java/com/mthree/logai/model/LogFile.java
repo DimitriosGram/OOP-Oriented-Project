@@ -42,6 +42,54 @@ public class LogFile {
         this.id = id;
     }
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    public LocalDateTime getUploadedAt() {
+        return uploadedAt;
+    }
+
+    public void setUploadedAt(LocalDateTime uploadedAt) {
+        this.uploadedAt = uploadedAt;
+    }
+
+    public String getDetectedSourceType() {
+        return detectedSourceType;
+    }
+
+    public void setDetectedSourceType(String detectedSourceType) {
+        this.detectedSourceType = detectedSourceType;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<LogEntry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(List<LogEntry> entries) {
+        this.entries = entries;
+    }
+
+    public List<ParsedLog> getParsedLogs() {
+        return parsedLogs;
+    }
+
+    public void setParsedLogs(List<ParsedLog> parsedLogs) {
+        this.parsedLogs = parsedLogs;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
