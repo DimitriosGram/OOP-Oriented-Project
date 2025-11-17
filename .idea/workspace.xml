@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2a85748f-64b3-4fdb-9cfb-d19ada37fc5c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/ParsedLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/ParsedLogEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/LogEntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/LogFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/ParsedLogEntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/repository/ParsedLogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/OOP-Oriented-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OOP-Oriented-Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/model/LogEntry.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="35cG7NYiOCEqBoqzmMBoOw3ZgPH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "brandon",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mthree.logai.App" />
+      <module name="OOP-AI-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mthree.logai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a85748f-64b3-4fdb-9cfb-d19ada37fc5c" name="Changes" comment="" />
+      <created>1763401779160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1763401779160</updated>
+    </task>
+    <servers />
+  </component>
+</project>
