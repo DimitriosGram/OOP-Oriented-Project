@@ -3,8 +3,8 @@ package com.mthree.logai.controller;
 import com.mthree.logai.dto.UploadLogRequest;
 import com.mthree.logai.dto.LogResponse;
 
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/logs")
