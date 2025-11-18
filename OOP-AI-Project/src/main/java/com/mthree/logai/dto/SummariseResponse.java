@@ -1,15 +1,18 @@
 package com.mthree.logai.dto;
 
 
-public class SummariseResponse {
-    private String summary;
+import com.fasterxml.jackson.databind.JsonNode;
 
-    public SummariseResponse(String summary) {
+public class SummariseResponse {
+    private JsonNode summary;
+
+    public SummariseResponse(JsonNode summary) {
         this.summary = summary;
     }
 
-    public String getSummary() {
+    public JsonNode getSummary() {
         return summary;
     }
 }
+
 

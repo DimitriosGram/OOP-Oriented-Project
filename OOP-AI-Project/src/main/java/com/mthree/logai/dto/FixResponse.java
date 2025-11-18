@@ -1,13 +1,16 @@
 package com.mthree.logai.dto;
 
-public class FixResponse {
-    private String recommendation;
+import com.fasterxml.jackson.databind.JsonNode;
 
-    public FixResponse(String recommendation) {
+public class FixResponse {
+    private JsonNode recommendation;
+
+    public FixResponse(JsonNode recommendation) {
         this.recommendation = recommendation;
     }
 
-    public String getRecommendation() {
+    public JsonNode getRecommendation() {
         return recommendation;
     }
 }
+

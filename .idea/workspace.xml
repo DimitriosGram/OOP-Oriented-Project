@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2a85748f-64b3-4fdb-9cfb-d19ada37fc5c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/controller/AIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/controller/AIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/controller/LogsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/controller/LogsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/AnalyseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/AnalyseResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/FixResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/FixResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/LogResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/LogResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/SummariseResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/OOP-AI-Project/src/main/java/com/mthree/logai/dto/SummariseResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,16 +40,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;brandon&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dimitrios-OOP",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mthree.logai.App" />
@@ -58,6 +63,17 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OOP-AI-Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OOP-AI-Project" />
+      <option name="filePath" />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
