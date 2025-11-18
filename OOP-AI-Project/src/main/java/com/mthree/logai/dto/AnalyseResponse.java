@@ -1,16 +1,15 @@
 package com.mthree.logai.dto;
 
 
-import com.fasterxml.jackson.databind.JsonNode;
 
 public class AnalyseResponse {
-    private JsonNode analysis;
+    private String analysis;
 
-    public AnalyseResponse(JsonNode analysis) {
+    public AnalyseResponse(String analysis) {
         this.analysis = analysis;
     }
 
-    public JsonNode getAnalysis() {
+    public String getAnalysis() {
         return analysis;
     }
 }

@@ -16,35 +16,35 @@ public class AIController {
     }
 
     @PostMapping("/analyze")
-    public ResponseEntity<AnalyseResponse> analyze(@RequestBody LogRequest request) {
-        var result = aiService.analyzeLogs(request.getLogs());
+    public ResponseEntity<AnalyseResponse> analyze(@RequestBody String request) {
+        var result = aiService.analyzeLogs(request);
         AnalyseResponse response = new AnalyseResponse(result);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/summarise-incident")
-    public ResponseEntity<SummariseResponse> summarise(@RequestBody LogRequest request) {
-        var result = aiService.summarizeIncident(request.getLogs());
+    public ResponseEntity<SummariseResponse> summarise(@RequestBody String request) {
+        var result = aiService.summarizeIncident(request);
         SummariseResponse response = new SummariseResponse(result);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/recommend-fix")
-    public ResponseEntity<FixResponse> recommendFix(@RequestBody LogRequest request) {
-        var result = aiService.recommendFix(request.getLogs());
+    public ResponseEntity<FixResponse> recommendFix(@RequestBody String request) {
+        var result = aiService.recommendFix(request);
         FixResponse response = new FixResponse(result);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/detect-anomaly")
-    public ResponseEntity<Object> detectAnomaly(@RequestBody LogRequest request) {
-        var result = aiService.detectAnomaly(request.getLogs());
+    public ResponseEntity<Object> detectAnomaly(@RequestBody String request) {
+        var result = aiService.detectAnomaly(request);
         return ResponseEntity.ok(result);
     }
 
     @PostMapping("/devops-chat")
-    public ResponseEntity<Object> chat(@RequestBody LogRequest request) {
-        var result = aiService.devOpsChat(request.getLogs());
+    public ResponseEntity<Object> chat(@RequestBody String request) {
+        var result = aiService.devOpsChat(request);
         return ResponseEntity.ok(result);
     }
 }
