@@ -22,14 +22,22 @@ public class TestRunner {
                 2025-11-17 10:12:04,003 WARN  [cache] Redis set failed, retrying
                 2025-11-17 10:12:05,100 ERROR [parser] Failed to parse input file
                 """;
-
+		
+		runNarrativeTest(client, builder, sampleLogs);
         runAnalysisTest(client, builder, sampleLogs);
         runSummaryTest(client, builder, sampleLogs);
         runAnomalyTest(client, builder, sampleLogs);
         runTimelineTest(client, builder, sampleLogs);
         runFixTest(client, builder, sampleLogs);
         runDevOpsChatTest(client, builder);
+		
     }
+
+	private static void runNarrativeTest(HFClient client, PromptBuilder builder, String logs) {
+		System.out.println("\n=== TEST: LOGS NARRATIVE ANALYSIS ===");
+		String prompt = builder.humanReadableAnalysis(logs);
+		System.out.println(client.ask(prompt));
+	}
 
     private static void runAnalysisTest(HFClient client, PromptBuilder builder, String logs) {
 		System.out.println("\n=== TEST: LOG ANALYSIS ===");
@@ -66,4 +74,6 @@ public class TestRunner {
 		String prompt = builder.devOpsChatPrompt("My Kubernetes pod keeps restarting. Here are logs...");
 		System.out.println(client.ask(prompt));
 	}
+
+
 }

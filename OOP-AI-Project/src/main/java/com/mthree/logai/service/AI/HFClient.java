@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.mthree.logai.exception.GlobalExceptionHandler;
+
 import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
@@ -25,7 +27,7 @@ public class HFClient {
 
     public String ask(String prompt) {
         try {
-            // Build router chat completions URL: {apiUrl}/chat/completions
+           
             String url = config.apiUrl;
             if (url.endsWith("/")) url = url.substring(0, url.length() - 1);
             url += "/chat/completions";
@@ -34,7 +36,7 @@ public class HFClient {
             headers.setBearerAuth(config.apiKey);
             headers.setContentType(MediaType.APPLICATION_JSON);
 
-            // Build OpenAI-style chat payload: { model, messages: [{role:"user",content:prompt}], temperature, max_tokens }
+            
             ObjectNode body = mapper.createObjectNode();
             body.put("model", config.model);
             ArrayNode messages = mapper.createArrayNode();
@@ -76,25 +78,14 @@ public class HFClient {
                 return choiceText.asText().trim();
             }
 
-            // 3) Fallback: top-level generated_text / array responses
-            JsonNode genTop = root.path("generated_text");
-            if (!genTop.isMissingNode() && !genTop.isNull()) {
-                return genTop.asText().trim();
-            }
-            if (root.isArray() && root.size() > 0) {
-                JsonNode first = root.get(0).path("generated_text");
-                if (!first.isMissingNode() && !first.isNull()) {
-                    return first.asText().trim();
-                }
-            }
 
             // Fallback: return raw response body
             return respBody.trim();
 
         } catch (HttpClientErrorException.NotFound nf) {
-            throw new RuntimeException("HF Router returned 404 Not Found. Ensure hf.api.url points to the router base (e.g. https://router.huggingface.co/v1) and you're POSTing to /chat/completions; also verify model name and access.", nf);
+            throw new GlobalExceptionHandler("HF Router returned 404 Not Found. Ensure hf.api.url points to the router base (e.g. https://router.huggingface.co/v1) and you're POSTing to /chat/completions; also verify model name and access.");
         } catch (Exception ex) {
-            throw new RuntimeException("Failed to call HuggingFace Router API", ex);
+            throw new GlobalExceptionHandler("Failed to call HuggingFace Router API");
         }
     }
 }

@@ -2,7 +2,6 @@ package com.mthree.logai.service.AI;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mthree.logai.service.AI.HFClient;
 import com.mthree.logai.utils.PromptBuilder;
 
 import org.springframework.stereotype.Service;
@@ -58,9 +57,5 @@ public class AIService {
 
     public JsonNode devOpsChat(String question) {
         return askModel(promptBuilder.devOpsChatPrompt(question), "devops chat");
-    }
-
-    public String analyzeLogsNarrative(String logs) {
-        return client.ask(promptBuilder.multiLevelLogPrompt(logs));
     }
 }
