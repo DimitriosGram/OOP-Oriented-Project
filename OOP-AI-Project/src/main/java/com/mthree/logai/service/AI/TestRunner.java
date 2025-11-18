@@ -1,12 +1,9 @@
-package com.mthree.logai.AI;
+package com.mthree.logai.service.AI;
 
 import com.mthree.logai.utils.PromptBuilder;
-import com.mthree.logai.service.AI.HFConfig;
-import com.mthree.logai.service.AI.HFClient;
 
 public class TestRunner {
 
-    
     public static void main(String[] args) {
 
         HFConfig config = new HFConfig();
@@ -22,8 +19,8 @@ public class TestRunner {
                 2025-11-17 10:12:04,003 WARN  [cache] Redis set failed, retrying
                 2025-11-17 10:12:05,100 ERROR [parser] Failed to parse input file
                 """;
-		
 
+        // Kubernetes logs for the devops chat test
         String sampleK8sLogs = """
                 2025-11-17T10:20:02.123Z ERROR   kubelet: Failed to connect to database: Connection refused
                 2025-11-17T10:20:02.125Z WARN    kubelet: Retrying in 5s...
@@ -40,46 +37,42 @@ public class TestRunner {
         runTimelineTest(client, builder, sampleLogs);
         runFixTest(client, builder, sampleLogs);
         runDevOpsChatTest(client, builder, sampleK8sLogs);
-		
     }
 
-	//Test Ai functions
-
+    //Test Ai functions
     private static void runAnalysisTest(HFClient client, PromptBuilder builder, String logs) {
-		System.out.println("\n=== TEST: LOG ANALYSIS ===");
-		String prompt = builder.analysisPrompt(logs);
-		System.out.println(client.ask(prompt));
-	}
+        System.out.println("\n=== TEST: LOG ANALYSIS ===");
+        String prompt = builder.analysisPrompt(logs);
+        System.out.println(client.ask(prompt));
+    }
 
-	private static void runSummaryTest(HFClient client, PromptBuilder builder, String logs) {
-		System.out.println("\n=== TEST: INCIDENT SUMMARY ===");
-		String prompt = builder.incidentSummaryPrompt(logs);
-		System.out.println(client.ask(prompt));
-	}
+    private static void runSummaryTest(HFClient client, PromptBuilder builder, String logs) {
+        System.out.println("\n=== TEST: INCIDENT SUMMARY ===");
+        String prompt = builder.incidentSummaryPrompt(logs);
+        System.out.println(client.ask(prompt));
+    }
 
-	private static void runAnomalyTest(HFClient client, PromptBuilder builder, String logs) {
-		System.out.println("\n=== TEST: ANOMALY DETECTION ===");
-		String prompt = builder.anomalyPrompt(logs);
-		System.out.println(client.ask(prompt));
-	}
+    private static void runAnomalyTest(HFClient client, PromptBuilder builder, String logs) {
+        System.out.println("\n=== TEST: ANOMALY DETECTION ===");
+        String prompt = builder.anomalyPrompt(logs);
+        System.out.println(client.ask(prompt));
+    }
 
-	private static void runTimelineTest(HFClient client, PromptBuilder builder, String logs) {
-		System.out.println("\n=== TEST: TIMELINE GENERATOR ===");
-		String prompt = builder.timelinePrompt(logs);
-		System.out.println(client.ask(prompt));
-	}
+    private static void runTimelineTest(HFClient client, PromptBuilder builder, String logs) {
+        System.out.println("\n=== TEST: TIMELINE GENERATOR ===");
+        String prompt = builder.timelinePrompt(logs);
+        System.out.println(client.ask(prompt));
+    }
 
-	private static void runFixTest(HFClient client, PromptBuilder builder, String logs) {
-		System.out.println("\n=== TEST: FIX RECOMMENDATION ===");
-		String prompt = builder.fixPrompt(logs);
-		System.out.println(client.ask(prompt));
-	}
+    private static void runFixTest(HFClient client, PromptBuilder builder, String logs) {
+        System.out.println("\n=== TEST: FIX RECOMMENDATION ===");
+        String prompt = builder.fixPrompt(logs);
+        System.out.println(client.ask(prompt));
+    }
 
-	private static void runDevOpsChatTest(HFClient client, PromptBuilder builder, String logs) {
-		System.out.println("\n=== TEST: DEVOPS CHAT ===");
-		String prompt = builder.devOpsChatPrompt("My Kubernetes pod keeps restarting. Here are logs:\n" + logs);
-		System.out.println(client.ask(prompt));
-	}
-
-
+    private static void runDevOpsChatTest(HFClient client, PromptBuilder builder, String logs) {
+        System.out.println("\n=== TEST: DEVOPS CHAT ===");
+        String prompt = builder.devOpsChatPrompt("My Kubernetes pod keeps restarting. Here are logs:\n" + logs);
+        System.out.println(client.ask(prompt));
+    }
 }
