@@ -1,47 +1,71 @@
 package com.mthree.logai.model;
 
+
+import jakarta.persistence.*;
+
+import java.util.Objects;
+
+@Entity
+@Table(name = "log_entry",
+    indexes = {@Index(name = "fk_log_entry_log_file_idx", columnList = "log_file_id")})
 public class LogEntry {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    private String oldmsg;
-    private String id;
-    private String timestamp;
-    private String source;
-    private String level;
-    private String message;
-    private String raw;
+    @ManyToOne
+    @JoinColumn(name = "log_file_id", nullable = false)
+    private LogFile logFile;
 
-    public LogEntry() {}
+    @Column(name = "line_number", nullable = false)
+    private Integer lineNumber;
 
-    public LogEntry(String oldmsg, String id, String timestamp, String source, String level, String message, String raw) {
-        this.oldmsg = oldmsg;
-        this.id = id;
-        this.timestamp = timestamp;
-        this.source = source;
-        this.level = level;
-        this.message = message;
-        this.raw = raw;
+    @Lob
+    @Column(name = "raw_text")
+    private String rawText;
+
+    public Integer getId() {
+        return id;
     }
 
-    public String getOldMsg() { return oldmsg; }
-    public void setOldMsg(String oldmsg) { this.oldmsg = oldmsg; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+    public LogFile getLogFile() {
+        return logFile;
+    }
 
-    public String getTimestamp() { return timestamp; }
-    public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
+    public void setLogFile(LogFile logFile) {
+        this.logFile = logFile;
+    }
 
-    public String getSource() { return source; }
-    public void setSource(String source) { this.source = source; }
+    public Integer getLineNumber() {
+        return lineNumber;
+    }
 
-    public String getLevel() { return level; }
-    public void setLevel(String level) { this.level = level; }
+    public void setLineNumber(Integer lineNumber) {
+        this.lineNumber = lineNumber;
+    }
 
-    public String getMessage() { return message; }
-    public void setMessage(String message) { this.message = message; }
+    public String getRawText() {
+        return rawText;
+    }
 
-    public String getRaw() { return raw; }
-    public void setRaw(String raw) { this.raw = raw; }
+    public void setRawText(String rawText) {
+        this.rawText = rawText;
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        LogEntry logEntry = (LogEntry) o;
+        return Objects.equals(id, logEntry.id) && Objects.equals(logFile, logEntry.logFile) && Objects.equals(lineNumber, logEntry.lineNumber) && Objects.equals(rawText, logEntry.rawText);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, logFile, lineNumber, rawText);
+    }
 }
