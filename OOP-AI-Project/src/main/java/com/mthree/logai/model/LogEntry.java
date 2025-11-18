@@ -2,6 +2,8 @@ package com.mthree.logai.model;
 
 public class LogEntry {
 
+
+    private String oldmsg;
     private String id;
     private String timestamp;
     private String source;
@@ -11,7 +13,8 @@ public class LogEntry {
 
     public LogEntry() {}
 
-    public LogEntry(String id, String timestamp, String source, String level, String message, String raw) {
+    public LogEntry(String oldmsg, String id, String timestamp, String source, String level, String message, String raw) {
+        this.oldmsg = oldmsg;
         this.id = id;
         this.timestamp = timestamp;
         this.source = source;
@@ -19,6 +22,9 @@ public class LogEntry {
         this.message = message;
         this.raw = raw;
     }
+
+    public String getOldMsg() { return oldmsg; }
+    public void setOldMsg(String oldmsg) { this.oldmsg = oldmsg; }
 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
@@ -37,6 +43,5 @@ public class LogEntry {
 
     public String getRaw() { return raw; }
     public void setRaw(String raw) { this.raw = raw; }
-
 
 }
