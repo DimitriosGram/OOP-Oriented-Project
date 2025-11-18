@@ -16,12 +16,9 @@ public class AIService {
     }
 
     private String askModel(String prompt, String operation) {
-        // try {
             String result = client.ask(prompt);
             return result;
-        // } catch (Exception e) {
-        //     throw new GlobalExceptionHandler("Failed to get output from model for operation: " + operation, e);
-        // }
+    
     }      
 
     public String chat(String message) {
