@@ -23,24 +23,45 @@ public class LogsController {
     @Autowired
     LogParser logParser;
 
-    // todo switch this to two separate upload endpoints for json and file
-    // currently doesn't work - need to handle each case in separate endpoint.
     /**
-     * Handles both JSON upload {"logContent": [content]} and file upload through HTTP multipart file upload.
-     * this endpoint identifies which method is used and persists either.
-     * The HTTP request must contain one of either JSON or multipart file body.
-     * @param jsonRequest optional request given in JSON format with "logContent" key.
-     * @param file optional multipart file given in HTTP request body.
-     * @return new id generated from persisting the log if upload succeeds,
+     * Handles JSON upload {"logContent": [content]}.
+     * @param jsonRequest request given in JSON format with "logContent" key.
+     * @return new LogResponse containing id generated from persisting the log and content preview if upload succeeds,
      * otherwise error response or bad request response.
      * @throws IOException if error occurs in persisting the log.
      */
     @PostMapping("/upload")
     public ResponseEntity<LogResponse> uploadLog(
-            @RequestPart(value = "json", required = false) UploadLogRequest jsonRequest,
-            @RequestPart(value = "file", required = false) MultipartFile file)
+            @RequestBody UploadLogRequest jsonRequest)
                 throws IOException {
 
+        String generatedId = null;
+        String contentPreview = null;
+
+        if (jsonRequest != null) {
+            // handle JSON upload
+            String logs = jsonRequest.getLogContent();
+            try (Reader reader = new StringReader(logs)) {
+                LogFile logFile = logParser.persistLog(reader);
+                generatedId = logFile.getId().toString();
+                contentPreview = logs.length() > 50 ? logs.substring(0, 50) + "..." : logs;
+            }
+        } else {
+            return ResponseEntity.badRequest().body(new LogResponse(null, "no log provided"));
+        }
+
+        return ResponseEntity.ok(new LogResponse(generatedId, contentPreview));
+    }
+
+    /**
+     * Handles multipart file upload.
+     * @param file file given in body of multipart HTTP request
+     * @return LogResponse containing id generated from persisting log and content preview if persisting succeeds,
+     * bad request response if the file is empty.
+     * @throws IOException if persisting the log fails.
+     */
+    @PostMapping("/upload-file")
+    public ResponseEntity<LogResponse> uploadLog(@RequestPart(value = "file") MultipartFile file) throws IOException {
         String generatedId = null;
         String contentPreview = null;
 
@@ -50,15 +71,6 @@ public class LogsController {
                 LogFile logFile = logParser.persistLog(reader, file.getOriginalFilename());
                 generatedId = logFile.getId().toString();
                 contentPreview = logFile.getFilename();
-            }
-
-        } else if (jsonRequest != null) {
-            // handle JSON upload
-            String logs = jsonRequest.getLogContent();
-            try (Reader reader = new StringReader(logs)) {
-                LogFile logFile = logParser.persistLog(reader);
-                generatedId = logFile.getId().toString();
-                contentPreview = logs.length() > 50 ? logs.substring(0, 50) + "..." : logs;
             }
         } else {
             return ResponseEntity.badRequest().body(new LogResponse(null, "no log provided"));
