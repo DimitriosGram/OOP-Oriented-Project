@@ -13,7 +13,7 @@ public class PromptBuilder {
             + "OUTPUT FORMAT (plain text):\n"
             + "Summary:\n"
             + "- <one-sentence summary>\n\n"
-            + "Priority: <P1|P2|P3|P4>\n"
+            + "Priority: LOW|MEDIUM|HIGH|CRITICAL\n"
             + "Confidence: <LOW|MEDIUM|HIGH>\n\n"
             + "Root Cause:\n"
             + "- Probable: <short phrase or 'unknown'>\n"
@@ -46,9 +46,7 @@ public class PromptBuilder {
             + "- <step 2>\n\n"
             + "Evidence:\n"
             + "- <relevant log line 1>\n"
-            + "- <relevant log line 2>\n\n"
-            + "LOGS:\n"
-            + logs;
+            + "- <relevant log line 2>\n\n";
     }
 
 
@@ -87,9 +85,7 @@ public class PromptBuilder {
             + "- <line 2>\n"
             + "- <line 3>\n\n"
             + "Suggested Fix:\n"
-            + "- <one-line possible fix or 'none identified'>\n\n"
-            + "LOGS:\n"
-            + logs;
+            + "- <one-line possible fix or 'none identified'>\n\n";
     }
 
     public String anomalyPrompt(String logs) {
@@ -135,15 +131,16 @@ public class PromptBuilder {
 
     public String devOpsChatPrompt(String question) {
         return ""
-            + "Role: You are a DevOps troubleshooting assistant speaking to a non-expert. Return structured plain text and be action-oriented and simple.\n\n"
+            + "Role: You are a DevOps troubleshooting assistant speaking to a non-expert. Return structured plain text and be action focused and simple.\n\n"
             + "OUTPUT FORMAT (plain text):\n"
             + "TL;DR:\n"
             + "- <one-line summary>\n\n"
             + "Diagnosis:\n"
-            + "- <short diagnosis>\n\n"
+            + "- <short diagnosis of the error>\n\n"
             + "Immediate Next Steps:\n"
-            + "1) <step> (command if applicable)\n\n"
-            + "Commands (if any):\n"
+            + "1) <step> \n\n"
+            +"2) <step>\n\n"
+            + "Commands (only generate applicable):\n"
             + "- <exact commands>\n\n"
             + "Confidence: <LOW|MEDIUM|HIGH>\n\n"
             + "Evidence:\n"
@@ -151,20 +148,5 @@ public class PromptBuilder {
             + question;
     }
 
-    public String humanReadableAnalysis(String logs) {
-        return ""
-            + "Role: Produce short categorized lists for quick analysis. Return only Plain text.\n\n"
-            + "Errors:\n"
-            + "- <one-line per error>\n\n"
-            + "Warnings:\n"
-            + "- <one-line per warning>\n\n"
-            + "Info:\n"
-            + "- <one-line per info>\n\n"
-            + "Observations:\n"
-            + "- <patterns>\n\n"
-            + "NextSteps:\n"
-            + "- <3 short actions>\n\n"
-            + "LOGS:\n"
-            + logs;
-    }
+
 }

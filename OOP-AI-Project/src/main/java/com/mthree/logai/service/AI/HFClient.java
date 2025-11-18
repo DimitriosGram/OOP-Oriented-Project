@@ -85,7 +85,7 @@ public class HFClient {
         } catch (HttpClientErrorException.NotFound nf) {
             throw new GlobalExceptionHandler("HF Router returned 404 Not Found. Ensure hf.api.url points to the router base (e.g. https://router.huggingface.co/v1) and you're POSTing to /chat/completions; also verify model name and access.");
         } catch (Exception ex) {
-            throw new GlobalExceptionHandler("Failed to call HuggingFace Router API");
+            throw new GlobalExceptionHandler("Failed to call HuggingFace Router API", ex);
         }
     }
 }
